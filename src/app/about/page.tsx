@@ -45,10 +45,20 @@ export default function About() {
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
               <p className="text-lg text-gray-600 mb-6">
-                Palette Pals was born from a shared passion for art and creativity. We believe that every space has a story to tell, and we're here to help you tell yours through beautiful, meaningful artwork.
+              Our name isn't just a brand—it's a bond. Palette, because color is our language. Pals, because we believe in growing together, not alone.
               </p>
               <p className="text-lg text-gray-600">
-                Our team of talented artists brings together diverse styles and techniques to create unique pieces that transform spaces and capture emotions. From intimate portraits to large-scale murals, we pour our hearts into every project.
+              Whether we’re working with NGOs, collaborating with schools, or conducting plein air sessions in nature’s lap, we carry one vision: to inspire, teach, and spread joy through the power of art.
+              </p>
+              <p className="text-lg text-gray-600">
+              We are more than a team. We’re a movement. And this is just the beginning.
+              </p>
+              <p className="text-lg text-gray-600">
+              Come paint your journey with us.
+              </p>
+              <p className="text-lg text-gray-600">
+              🎨 With warmth, <br />
+              Team Palette Pals
               </p>
             </div>
             <div className="relative h-[400px] rounded-xl overflow-hidden">

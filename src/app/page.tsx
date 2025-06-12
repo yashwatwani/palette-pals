@@ -4,110 +4,153 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 
+const services = [
+  {
+    title: 'Murals',
+    description: 'Transform your space with custom murals designed to bring your vision to life. Our team specializes in creating stunning wall art for homes, businesses, and public spaces.',
+    image: '/images/artwork/urban-mural.jpg',
+    link: '/services',
+  },
+  {
+    title: 'Portraits',
+    description: 'Capture the essence of your loved ones with our custom portrait services. We offer various styles from realistic to stylized, using different mediums including oil, acrylic, and watercolor.',
+    image: '/images/artwork/family-portrait.jpg',
+    link: '/services',
+  },
+  {
+    title: 'Abstract Art',
+    description: 'Express your unique style with custom abstract art pieces. Our artists work closely with you to create pieces that complement your space and reflect your personality.',
+    image: '/images/artwork/abstract-dreams.jpg',
+    link: '/services',
+  },
+];
+
+const recentWork = [
+  {
+    image: '/images/artwork/urban-mural.jpg',
+    alt: 'Urban Mural',
+  },
+  {
+    image: '/images/artwork/family-portrait.jpg',
+    alt: 'Family Portrait',
+  },
+  {
+    image: '/images/artwork/nature-symphony.jpg',
+    alt: 'Nature Symphony',
+  },
+  {
+    image: '/images/artwork/abstract-dreams.jpg',
+    alt: 'Abstract Dreams',
+  },
+];
+
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
+      <section className="relative flex flex-col items-center justify-center text-center py-14 md:py-20 overflow-hidden">
+        <div className="absolute inset-0 -z-10">
           <Image
             src="/images/hero-bg.jpg"
             alt="Artistic background"
             fill
-            className="object-cover"
+            className="object-cover opacity-60"
             priority
           />
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-pink-100/60" />
         </div>
-        
-        <motion.div
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="relative z-10 text-center text-white px-4"
+          className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent"
         >
-          <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Where Art Comes to Life
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
-            Transforming spaces with unique paintings, murals, and portraits that tell your story
-          </p>
+          Bringing Your Vision to Life
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-gray-700"
+        >
+          Custom murals, portraits, and artwork for your home or business
+        </motion.p>
+        <div className="flex flex-col md:flex-row gap-4 justify-center mb-8">
           <Link
             href="/contact"
-            className="inline-block bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition-colors"
+            className="inline-block bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition-colors"
           >
-            Start Your Project
+            Get in Touch
           </Link>
-        </motion.div>
+          <Link
+            href="/work"
+            className="inline-block bg-white text-pink-600 border border-pink-600 hover:bg-pink-50 px-8 py-3 rounded-full text-lg font-semibold transition-colors"
+          >
+            View Our Work
+          </Link>
+        </div>
       </section>
 
-      {/* Featured Services */}
+      {/* Our Services */}
+      <section className="pt-8 pb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-2">Our Services</h2>
+            <p className="text-xl text-gray-600">We offer a wide range of artistic services to meet your needs</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {services.map((service, idx) => (
+              <div key={service.title} className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow flex flex-col">
+                <div className="relative h-56 w-full rounded-t-xl overflow-hidden">
+                  <Image src={service.image} alt={service.title} fill className="object-cover" />
+                </div>
+                <div className="p-6 flex-1 flex flex-col">
+                  <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+                  <p className="text-gray-600 mb-4 flex-1">{service.description}</p>
+                  <Link href={service.link} className="inline-block mt-auto bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-full text-sm font-semibold transition-colors">Learn More</Link>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center mt-10">
+            <Link href="/services" className="inline-block bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition-colors">View All Services</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Recent Work */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Services</h2>
-            <p className="text-xl text-gray-600">Bringing your artistic vision to life</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Custom Paintings',
-                description: 'Unique artwork tailored to your style and space',
-                icon: '🎨',
-              },
-              {
-                title: 'Murals',
-                description: 'Transform your walls into stunning works of art',
-                icon: '🏛️',
-              },
-              {
-                title: 'Portraits',
-                description: 'Capture memories in beautiful artistic form',
-                icon: '👤',
-              },
-            ].map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="bg-gray-50 p-8 rounded-xl hover:shadow-lg transition-shadow"
-              >
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
-              </motion.div>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-900 mb-2">Our Recent Work</h2>
+            <p className="text-xl text-gray-600">Take a look at some of our latest projects</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+            {recentWork.map((item, idx) => (
+              <div key={idx} className="rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
+                <div className="relative h-56 w-full">
+                  <Image src={item.image} alt={item.alt} fill className="object-cover" />
+                </div>
+              </div>
             ))}
+          </div>
+          <div className="flex justify-center">
+            <Link href="/work" className="inline-block bg-pink-600 hover:bg-pink-700 text-white px-8 py-3 rounded-full text-lg font-semibold transition-colors">View Full Gallery</Link>
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="bg-purple-600 text-white py-20">
+      <section className="bg-pink-600 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <h2 className="text-4xl font-bold mb-4">Ready to Transform Your Space?</h2>
+          <p className="text-xl mb-8">Contact us today to discuss your project and bring your vision to life.</p>
+          <Link
+            href="/contact"
+            className="inline-block bg-white text-pink-600 hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-semibold transition-colors"
           >
-            <h2 className="text-4xl font-bold mb-4">Ready to Transform Your Space?</h2>
-            <p className="text-xl mb-8">Let's create something extraordinary together</p>
-            <Link
-              href="/contact"
-              className="inline-block bg-white text-purple-600 hover:bg-gray-100 px-8 py-3 rounded-full text-lg font-semibold transition-colors"
-            >
-              Get in Touch
-            </Link>
-          </motion.div>
+            Get Started
+          </Link>
         </div>
       </section>
     </div>

@@ -33,26 +33,27 @@ const Navbar = () => {
           </Link>
 
           <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-purple-600 transition-colors">
+            <Link href="/" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">
               Home
             </Link>
-            <Link href="/about" className="text-gray-700 hover:text-purple-600 transition-colors">
+            <Link href="/about" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">
               About
             </Link>
-            <Link href="/services" className="text-gray-700 hover:text-purple-600 transition-colors">
+            <Link href="/services" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">
               Services
             </Link>
-            <Link href="/work" className="text-gray-700 hover:text-purple-600 transition-colors">
-              Our Work
+            <Link href="/work" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">
+              Gallery
             </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-purple-600 transition-colors">
+            <Link href="/contact" className="text-gray-700 hover:text-pink-600 transition-colors font-medium">
               Contact
             </Link>
             <a
               href="https://www.instagram.com/palette._.pals/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-700 hover:text-purple-600 transition-colors"
+              className="ml-4 text-pink-600 hover:text-purple-600 transition-colors flex items-center"
+              aria-label="Instagram"
             >
               <FaInstagram className="w-6 h-6" />
             </a>

@@ -4,61 +4,54 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-// This would typically come from a database or CMS
-const artwork = [
+// Define your gallery categories and images here
+const galleryCategories = [
   {
-    id: 1,
-    title: 'Abstract Dreams',
-    description: 'A vibrant abstract painting exploring the depths of imagination',
-    category: 'paintings',
-    image: '/images/artwork/abstract-dreams.jpg',
+    name: 'Mural',
+    folder: 'Mural',
+    images: [
+      'mural1.jpg',
+      'mural2.jpg',
+      'mural3.jpg',
+    ],
   },
   {
-    id: 2,
-    title: 'Urban Mural',
-    description: 'Large-scale mural transforming a city wall into a canvas of urban life',
-    category: 'murals',
-    image: '/images/artwork/urban-mural.jpg',
+    name: 'Portrait',
+    folder: 'Portrait',
+    images: [
+      'portrait1.jpg',
+      'portrait2.jpg',
+      'portrait3.jpg',
+    ],
   },
   {
-    id: 3,
-    title: 'Family Portrait',
-    description: 'A timeless family portrait capturing precious moments',
-    category: 'portraits',
-    image: '/images/artwork/family-portrait.jpg',
-  },
-  {
-    id: 4,
-    title: 'Nature\'s Symphony',
-    description: 'A landscape painting celebrating the beauty of nature',
-    category: 'paintings',
-    image: '/images/artwork/nature-symphony.jpg',
-  },
-  {
-    id: 5,
-    title: 'Corporate Mural',
-    description: 'Modern mural design for a corporate office space',
-    category: 'murals',
-    image: '/images/artwork/corporate-mural.jpg',
-  },
-  {
-    id: 6,
-    title: 'Wedding Portrait',
-    description: 'Romantic wedding portrait in watercolor style',
-    category: 'portraits',
-    image: '/images/artwork/wedding-portrait.jpg',
+    name: 'Abstract',
+    folder: 'Abstract',
+    images: [
+      'abstract1.jpg',
+      'abstract2.jpg',
+      'abstract3.jpg',
+    ],
   },
 ];
 
-const categories = ['all', 'paintings', 'murals', 'portraits'];
+// Flatten all images for the 'All' category
+const allImages = galleryCategories.flatMap(cat => cat.images.map(img => ({
+  folder: cat.folder,
+  img
+})));
+
+const allCategory = {
+  name: 'All',
+  folder: '',
+  images: allImages,
+};
+
+const categoriesWithAll = [allCategory, ...galleryCategories];
 
 export default function Work() {
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [selectedArtwork, setSelectedArtwork] = useState<typeof artwork[0] | null>(null);
-
-  const filteredArtwork = selectedCategory === 'all'
-    ? artwork
-    : artwork.filter(item => item.category === selectedCategory);
+  const [selectedCategory, setSelectedCategory] = useState(categoriesWithAll[0].name);
+  const currentCategory = categoriesWithAll.find(cat => cat.name === selectedCategory);
 
   return (
     <div className="min-h-screen bg-white">
@@ -74,105 +67,86 @@ export default function Work() {
           />
           <div className="absolute inset-0 bg-black/50" />
         </div>
-        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="relative z-10 text-center text-white px-4"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Our Work</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">Gallery</h1>
           <p className="text-xl md:text-2xl max-w-2xl mx-auto">
-            Explore our portfolio of creative projects
+            Browse our portfolio by category
           </p>
         </motion.div>
       </section>
 
-      {/* Category Filter */}
+      {/* Category Tabs */}
       <section className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center space-x-4">
-            {categories.map((category) => (
+            {categoriesWithAll.map((cat) => (
               <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
+                key={cat.name}
+                onClick={() => setSelectedCategory(cat.name)}
                 className={`px-6 py-2 rounded-full text-lg font-medium transition-colors ${
-                  selectedCategory === category
-                    ? 'bg-purple-600 text-white'
+                  selectedCategory === cat.name
+                    ? 'bg-pink-600 text-white'
                     : 'bg-white text-gray-600 hover:bg-gray-100'
                 }`}
               >
-                {category.charAt(0).toUpperCase() + category.slice(1)}
+                {cat.name}
               </button>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Gallery */}
+      {/* Gallery Images */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredArtwork.map((item) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                viewport={{ once: true }}
-                className="group cursor-pointer"
-                onClick={() => setSelectedArtwork(item)}
-              >
-                <div className="relative h-[400px] rounded-xl overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                    <div className="text-white text-center p-4">
-                      <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                      <p className="text-sm">{item.description}</p>
+            {selectedCategory === 'All'
+              ? allImages.map(({ folder, img }, idx) => (
+                  <motion.div
+                    key={folder + '-' + img + '-' + idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                    className="rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
+                  >
+                    <div className="relative h-[350px] w-full">
+                      <Image
+                        src={`/images/gallery/${folder}/${img}`}
+                        alt={`${folder} ${img}`}
+                        fill
+                        className="object-cover"
+                      />
                     </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+                  </motion.div>
+                ))
+              : currentCategory?.images.map((img, idx) => (
+                  <motion.div
+                    key={currentCategory.folder + '-' + img + '-' + idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true }}
+                    className="rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow"
+                  >
+                    <div className="relative h-[350px] w-full">
+                      <Image
+                        src={`/images/gallery/${currentCategory.folder}/${img}`}
+                        alt={`${currentCategory.folder} ${img}`}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  </motion.div>
+                ))}
           </div>
         </div>
       </section>
-
-      {/* Modal */}
-      {selectedArtwork && (
-        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            className="bg-white rounded-xl max-w-4xl w-full overflow-hidden"
-          >
-            <div className="relative h-[60vh]">
-              <Image
-                src={selectedArtwork.image}
-                alt={selectedArtwork.title}
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-2xl font-bold mb-2">{selectedArtwork.title}</h3>
-              <p className="text-gray-600 mb-4">{selectedArtwork.description}</p>
-              <button
-                onClick={() => setSelectedArtwork(null)}
-                className="bg-purple-600 text-white px-6 py-2 rounded-full hover:bg-purple-700 transition-colors"
-              >
-                Close
-              </button>
-            </div>
-          </motion.div>
-        </div>
-      )}
     </div>
   );
 } 

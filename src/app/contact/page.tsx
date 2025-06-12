@@ -176,7 +176,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Phone</h3>
-                    <p className="text-gray-600">+91 (555) 123-4567</p>
+                    <p className="text-gray-600">+91 9479670801</p>
                   </div>
                 </div>
 
@@ -186,7 +186,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Email</h3>
-                    <p className="text-gray-600">info@palettepals.com</p>
+                    <p className="text-gray-600">hitanshiwatwani52000@gmail.com</p>
                   </div>
                 </div>
 
@@ -196,7 +196,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900">Location</h3>
-                    <p className="text-gray-600">123 Art Street, Creative City, CA 90210</p>
+                    <p className="text-gray-600">Anywhere in India</p>
                   </div>
                 </div>
 
