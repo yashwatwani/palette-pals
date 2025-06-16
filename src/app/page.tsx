@@ -8,19 +8,19 @@ const services = [
   {
     title: 'Murals',
     description: 'Transform your space with custom murals designed to bring your vision to life. Our team specializes in creating stunning wall art for homes, businesses, and public spaces.',
-    image: '/images/artwork/urban-mural.jpg',
+    image: '/images/artwork/GOLDEN ELEGANCE.jpg',
     link: '/services',
   },
   {
     title: 'Portraits',
     description: 'Capture the essence of your loved ones with our custom portrait services. We offer various styles from realistic to stylized, using different mediums including oil, acrylic, and watercolor.',
-    image: '/images/artwork/family-portrait.jpg',
+    image: '/images/artwork/portrait commision.jpg',
     link: '/services',
   },
   {
-    title: 'Abstract Art',
-    description: 'Express your unique style with custom abstract art pieces. Our artists work closely with you to create pieces that complement your space and reflect your personality.',
-    image: '/images/artwork/abstract-dreams.jpg',
+    title: 'Live Wedding Painting',
+    description: 'We paint your big day live on canvas, capturing the love, joy, and magic as it unfolds. A beautiful keepsake and a unique experience for you and your guests.',
+    image: '/images/artwork/live wedding 2.jpg',
     link: '/services',
   },
 ];
@@ -46,18 +46,18 @@ const recentWork = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative flex flex-col items-center justify-center text-center py-14 md:py-20 overflow-hidden">
+      <section className="relative flex flex-col items-center justify-center text-center h-[60vh] overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/images/hero-bg.jpg"
+            src="/images/artwork/photo_2025-06-14_19.54.02.jpeg"
             alt="Artistic background"
             fill
-            className="object-cover opacity-60"
+            className="object-cover opacity-80"
             priority
           />
-          <div className="absolute inset-0 bg-pink-100/60" />
+          <div className="absolute inset-0 bg-pink-100/30" />
         </div>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -102,7 +102,12 @@ export default function Home() {
             {services.map((service, idx) => (
               <div key={service.title} className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow flex flex-col">
                 <div className="relative h-56 w-full rounded-t-xl overflow-hidden">
-                  <Image src={service.image} alt={service.title} fill className="object-cover" />
+                  <Image 
+                    src={service.image} 
+                    alt={service.title} 
+                    fill 
+                    className={service.title === 'Portraits' ? 'object-contain' : 'object-cover'} 
+                  />
                 </div>
                 <div className="p-6 flex-1 flex flex-col">
                   <h3 className="text-xl font-semibold mb-2">{service.title}</h3>

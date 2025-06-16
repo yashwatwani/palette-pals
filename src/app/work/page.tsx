@@ -10,29 +10,65 @@ const galleryCategories = [
     name: 'Mural',
     folder: 'Mural',
     images: [
-      'mural1.jpg',
-      'mural2.jpg',
-      'mural3.jpg',
+      'a room of three tales 2.jpg',
+      'a room of three tales 3.jpg',
+      'Shrawan Talks Doodle Mural.jpg',
+      'THE ENLIGHTENED PATH.png',
+      'PXL_20250614_080929629.jpg',
+      'PXL_20250614_080955991.jpg',
+      'PXL_20250614_081037124.jpg',
+      'GOLDEN ELEGANCE.jpg'
     ],
   },
   {
     name: 'Portrait',
     folder: 'Portrait',
     images: [
-      'portrait1.jpg',
-      'portrait2.jpg',
-      'portrait3.jpg',
+      'baba.jpg',
+      'portrait commision.jpg',
+      'portrait commision 2.jpg'
     ],
   },
   {
-    name: 'Abstract',
-    folder: 'Abstract',
+    name: 'Painting',
+    folder: 'Painting',
     images: [
-      'abstract1.jpg',
-      'abstract2.jpg',
-      'abstract3.jpg',
+      'a moment shared.png',
+      'beauty of khajuraho.jpg',
+      'Beethoven cast painting.jpg',
+      'by the ghat.png',
+      'college premises.png',
+      'embrace the falls.jpg',
+      'Ganges Serenity Plein Air Boats.jpg',
+      'garba live event painting.jpg',
+      'haystack.png',
+      'January Jubilation.jpg',
+      'journey.jpg',
+      'krishna and kaliya.png',
+      'live full figure study.jpg',
+      'map of fort raigarh.png',
+      'mother and children.png',
+      'nurturing bonds.jpg',
+      'phad folk painting.jpg',
+      'photo_2025-06-14_19.54.02.jpg',
+      'prem ke rang .jpg',
+      'mural6.jpg',
+      'Still life Color Study.png',
+      'Still life grisaille study.png',
+      'strings pf tradition.jpg',
+      'study of forms.png',
+      'the Gate of gujari mahal.jpg',
+      'untitled(plein aiir).jpg'
     ],
   },
+  {
+  name: 'Live Wedding Painting',
+  folder: 'live-wedding-painting',
+  images: [
+    'live wedding 1.jpg',
+    'live wedding 2.jpg',
+  ],
+}
 ];
 
 // Flatten all images for the 'All' category
@@ -117,7 +153,7 @@ export default function Work() {
                   >
                     <div className="relative h-[350px] w-full">
                       <Image
-                        src={`/images/gallery/${folder}/${img}`}
+                        src={`/images/artwork/${folder}/${img}`}
                         alt={`${folder} ${img}`}
                         fill
                         className="object-cover"
@@ -136,7 +172,7 @@ export default function Work() {
                   >
                     <div className="relative h-[350px] w-full">
                       <Image
-                        src={`/images/gallery/${currentCategory.folder}/${img}`}
+                        src={`/images/artwork/${currentCategory.folder}/${img}`}
                         alt={`${currentCategory.folder} ${img}`}
                         fill
                         className="object-cover"

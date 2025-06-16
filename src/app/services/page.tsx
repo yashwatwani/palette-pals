@@ -6,14 +6,14 @@ import Image from 'next/image';
 const services = [
   {
     title: 'Custom Paintings',
-    description: 'We create unique, personalized paintings that reflect your style and vision. From abstract to realistic, we bring your ideas to life on canvas.',
+    description: 'Shop from our collection of one-of-a-kind original paintings. Each piece reflects our unique expression and artistic journey.',
     features: [
-      'Personalized consultation',
-      'Custom size options',
-      'Various styles and techniques',
-      'High-quality materials',
+      'Exclusive Original Artwork',
+      'Artist Story Behind Every Piece',
+      'Certificate of Authenticity',
+      'Gallery-Style Viewing Experience',
     ],
-    image: '/images/custom-paintings.jpg',
+    image: '/images/artwork/a moment shared.png',
   },
   {
     title: 'Murals',
@@ -24,7 +24,7 @@ const services = [
       'Professional installation',
       'Durable materials',
     ],
-    image: '/images/murals.jpg',
+    image: '/images/artwork/GOLDEN ELEGANCE.jpg',
   },
   {
     title: 'Portraits',
@@ -35,18 +35,18 @@ const services = [
       'Digital preview',
       'Fast turnaround',
     ],
-    image: '/images/portraits.jpg',
+    image: '/images/artwork/portrait commision.jpg',
   },
   {
-    title: 'Art Restoration',
-    description: 'Preserve and restore your valuable artwork with our expert restoration services. We handle both modern and classical pieces with care.',
+    title: 'Live Wedding Painting',
+    description: 'We paint your big day live on canvas, capturing the love, joy, and magic as it unfolds. A beautiful keepsake and a unique experience for you and your guests.',
     features: [
-      'Damage assessment',
-      'Color matching',
-      'Surface cleaning',
-      'Conservation techniques',
+      'Live Painting Experience',
+      'Personalized Keepsake',
+      'Candid Moments, Artistically Preserved',
+      'Interactive Guest Engagement',
     ],
-    image: '/images/restoration.jpg',
+    image: '/images/artwork/live wedding 2.jpg',
   },
 ];
 
