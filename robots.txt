@@ -1,0 +1,5 @@
+# Temporary URL — not the final domain yet, so keep it out of search results.
+# WHEN THE REAL DOMAIN IS LIVE: delete the Disallow line below, restore the
+# canonical tags and sitemap.xml, then redeploy.
+User-agent: *
+Disallow: /

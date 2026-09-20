@@ -1,0 +1,20 @@
+# Build output — regenerate any time with ./build.sh
+dist/
+
+# Original photographs (~800 MB of JPEG/PNG/HEIC).
+# Deliberately NOT in git: repos never forget large binaries, and GitHub
+# rejects files over 100 MB. The web-ready versions of every one of these
+# photos ARE committed, in assets/img/. Keep the originals backed up
+# somewhere else (Drive, iCloud, an external disk).
+images/
+murals/
+marriage/
+workshop/
+doodle/
+
+# Junk
+.DS_Store
+._*
+*.crdownload
+node_modules/
+.netlify/

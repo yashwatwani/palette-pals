@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Palette Pals</title>
+<meta name="description" content="Book Palette Pals for a mural, a sculpted relief wall, live wedding painting or a workshop. Tell us about the space.">
+<meta property="og:title" content="Contact — Palette Pals">
+<meta property="og:description" content="Tell us about the wall, the day or the group.">
+<meta property="og:image" content="assets/img/full/golden-flamingos-1.webp">
+<link rel="icon" href="assets/img/logo-mark.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css?v=2">
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap">
+    <a href="index.html" class="brand" aria-label="Palette Pals, home">
+      <img src="assets/img/logo-mark.png" alt="" width="235" height="328">
+      <span class="brand-txt"><b>Palette Pals</b><span>Value meets Duo</span></span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="work.html">Work</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="on">Contact</a>
+      <a href="contact.html" class="btn">Book the duo</a>
+    </nav>
+    <button class="burger" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<main>
+
+  <section class="section" style="padding-top:clamp(128px,15vw,190px)">
+    <div class="wrap">
+      <div class="section-head" style="max-width:26ch">
+        <span class="eyebrow rv">Contact</span>
+        <h1 class="split-w" style="font-size:clamp(2.6rem,6.4vw,5.4rem)">Tell us about the space.</h1>
+      </div>
+
+      <div class="split">
+        <div>
+          <p class="lead rv">A photo of the wall, the rough size, and a sentence about what the room is for. That is enough for us to come back with a direction and a price.</p>
+
+          <!-- Netlify Forms: works once deployed. See README.md -->
+          <form class="form rv rv-d1" id="enquiry" name="enquiry" method="POST"
+                data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="enquiry">
+            <p hidden><label>Leave this empty: <input name="bot-field"></label></p>
+
+            <div class="row2">
+              <div class="field">
+                <label for="name">Your name</label>
+                <input id="name" name="name" type="text" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required autocomplete="email">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="service">What do you need?</label>
+              <select id="service" name="service">
+                <option>Mural, flat painted</option>
+                <option>Sculpted relief or Lipan art</option>
+                <option>Live wedding painting</option>
+                <option>Doodle wall for an event</option>
+                <option>Workshop for a group or team</option>
+                <option>Something else</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="message">About the space</label>
+              <textarea id="message" name="message" required
+                placeholder="Where is it, roughly how big is the wall, when do you need it, and what is the room used for?"></textarea>
+            </div>
+
+            <div class="form-msg" id="form-msg" role="status" aria-live="polite"></div>
+
+            <div>
+              <button type="submit" class="btn">Send enquiry <span class="arw">→</span></button>
+            </div>
+            <p class="form-note">We reply to everything, usually within a couple of days. No phone number needed.</p>
+          </form>
+        </div>
+
+        <div class="rv rv-d1">
+          <div class="media wipe" style="margin-bottom:28px">
+            <img src="assets/img/thumb/golden-flamingos-1.webp" alt="Gold single-line flamingos painted on a deep brown entrance wall" width="800" height="1067" loading="lazy" decoding="async">
+          </div>
+          <dl class="contact-list">
+            <div class="contact-row"><dt>Email</dt><dd><a class="tlink" href="mailto:hitanshiwatwani2000@gmail.com">hitanshiwatwani2000@gmail.com</a></dd></div>
+            <div class="contact-row"><dt>Instagram</dt><dd><a class="tlink" href="https://www.instagram.com/palette._.pals/" target="_blank" rel="noopener">@palette._.pals</a></dd></div>
+            <div class="contact-row"><dt>Based in</dt><dd>Delhi. We travel for work.</dd></div>
+            <div class="contact-row"><dt>Lead time</dt><dd>Usually two to six weeks, depending on the wall.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tight">
+    <div class="wrap">
+      <div class="section-head center">
+        <span class="eyebrow rv">Before you write</span>
+        <h2 class="split-w">Questions we get asked a lot.</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><h3>What does it cost?</h3><p>It depends on size, detail and surface. We quote a fixed price after seeing a photo of the wall, never by the hour.</p></div>
+        <div class="step"><h3>How long does it take?</h3><p>Most walls are two to six days on site. Relief and carved work takes longer. Live wedding canvases are finished on the day.</p></div>
+        <div class="step"><h3>Do you travel?</h3><p>Yes. We are based in Delhi and have worked in Gwalior, Rajasthan and Maharashtra. Travel is quoted separately.</p></div>
+        <div class="step"><h3>Will it last?</h3><p>We seal every finished wall so it can be wiped clean, and we leave you touch-up paint in the exact colours.</p></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr-grid">
+      <div>
+        <a href="index.html" class="brand" style="margin-bottom:18px">
+          <img src="assets/img/logo-mark-light.png" alt="" width="235" height="328">
+          <span class="brand-txt"><b>Palette Pals</b><span>Value meets Duo</span></span>
+        </a>
+        <p>Hand-painted murals, sculpted relief, live wedding painting and workshops. Made by two people with brushes, not a printer.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Say hello</h4>
+        <a href="https://www.instagram.com/palette._.pals/" target="_blank" rel="noopener">Instagram @palette._.pals</a>
+        <a href="mailto:hitanshiwatwani2000@gmail.com">hitanshiwatwani2000@gmail.com</a>
+        <a href="contact.html">Book a project</a>
+      </div>
+    </div>
+  </div>
+  <div class="ftr-word" aria-hidden="true">Palette Pals</div>
+  <div class="wrap">
+    <div class="ftr-btm">
+      <span>© <span data-year>2026</span> Palette Pals. All rights reserved.</span>
+      <span>Value meets Duo</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="assets/js/site.js?v=2" defer></script>
+</body>
+</html>
