@@ -273,7 +273,8 @@
           '<img src="assets/img/thumb/' + im.s + '.webp" alt="' + p.title + ' — ' + p.place + '"' +
              ' width="' + im.w + '" height="' + im.h + '" loading="lazy" decoding="async">' +
           (p.imgs.length > 1 ? '<span class="count">' + p.imgs.length + '</span>' : '') +
-          '<figcaption><b>' + p.title + '</b><small>' + p.place + '</small></figcaption>' +
+          '<figcaption><b>' + p.title + '</b><small>' + p.place +
+            (p.date ? ' &nbsp;·&nbsp; ' + p.date : '') + '</small></figcaption>' +
         '</figure>';
       grid.appendChild(b);
       if (io) io.observe(b); else b.classList.add('in');
@@ -295,7 +296,7 @@
       lbImg.src = 'assets/img/full/' + im.s + '.webp';
       lbImg.alt = p.title + ' — image ' + (ii + 1) + ' of ' + p.imgs.length;
       lbTitle.textContent = p.title;
-      lbPlace.textContent = p.place;
+      lbPlace.textContent = p.date ? p.place + '  ·  ' + p.date : p.place;
       lbText.textContent = p.blurb;
       lbDots.innerHTML = p.imgs.map(function (_, k) {
         return '<i class="' + (k === ii ? 'on' : '') + '"></i>';

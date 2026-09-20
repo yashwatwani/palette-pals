@@ -291,6 +291,13 @@ body.menu .burger i:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 .media-stack .media { height: 100%; }
 .media-stack .media img { width: 100%; height: 100%; object-fit: cover; }
 
+/* Founder portrait with a caption under it */
+.portrait { margin: 0; }
+.portrait figcaption {
+  margin-top: 14px;
+  font-size: .76rem; letter-spacing: .13em; text-transform: uppercase; color: var(--muted);
+}
+
 /* ---------- Process ---------- */
 .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(18px, 2.4vw, 34px); counter-reset: s; }
 .step { position: relative; padding-top: 26px; border-top: 1.5px solid var(--line); counter-increment: s; }
