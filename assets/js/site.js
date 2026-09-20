@@ -226,7 +226,7 @@
      Gallery + lightbox
      ========================================================= */
   var CATS = [
-    { id: 'all', label: 'Everything' },
+    { id: 'all', label: 'All' },
     { id: 'mural', label: 'Murals' },
     { id: 'relief', label: '3D & Relief' },
     { id: 'wedding', label: 'Live Wedding' },

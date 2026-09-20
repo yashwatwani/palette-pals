@@ -787,13 +787,25 @@ window.PROJECTS = [
     "cat": [
       "wedding"
     ],
-    "blurb": "Painted at the mandap while the ceremony happened. The couple took the canvas home the same night.",
+    "blurb": "Painted at the mandap while the ceremony happened: the couple on the carved throne, rose garlands running down both pillars. They took the canvas home the same night.",
     "imgs": [
       {
         "s": "live-wedding-1-gwalior",
         "w": 800,
         "h": 584
-      },
+      }
+    ]
+  },
+  {
+    "slug": "live-wedding-gwalior-2",
+    "title": "Live Wedding, Gwalior II",
+    "place": "Painted on the day",
+    "date": "",
+    "cat": [
+      "wedding"
+    ],
+    "blurb": "A second Gwalior wedding, painted live. The couple seated on the white mandap floor between gold drapes, under a canopy of mixed flowers.",
+    "imgs": [
       {
         "s": "live-wedding-2-gwalior",
         "w": 800,
