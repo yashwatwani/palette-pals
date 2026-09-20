@@ -38,7 +38,7 @@ Everything on the Work page is generated from `assets/js/data.js`. Find the proj
 }
 ```
 
-Filter tabs are `"mural"`, `"relief"`, `"wedding"`, `"doodle"`, `"workshop"`.
+Filter tabs are `"mural"`, `"relief"`, `"wedding"`, `"workshop"`. Doodle walls count as murals.
 A project can be in more than one, e.g. `"cat": ["mural", "relief"]`.
 
 ### Change words on a page
@@ -55,8 +55,7 @@ Top of `assets/css/site.css`:
 ```
 
 ### ⚠️ After editing CSS or JS
-The `.html` files link to `site.css?v=1` and `site.js?v=1`. Bump that number
-(`?v=2`, `?v=3`…) in all four HTML files so browsers pick up your change instead of
+The `.html` files link to `site.css?v=N` and `site.js?v=N`. Bump that number in all four HTML files so browsers pick up your change instead of
 showing a cached old copy.
 
 ---
@@ -98,7 +97,7 @@ To publish changes:
 ```
 
 `build.sh` copies the four pages plus `assets/` into `dist/`. **Always deploy `dist/`, never the
-project root** — the root still holds ~800 MB of original photos that must not be uploaded.
+project root** — the root holds `originals/` (181 MB of source photos) that must not be uploaded.
 
 ### ⚠️ Before the site goes public on a real domain
 Right now `robots.txt` blocks all search engines, deliberately, because `palettepals.netlify.app`
@@ -110,12 +109,8 @@ is a temporary address. When the real domain is connected:
 4. `./build.sh && netlify deploy --prod --dir=dist`
 
 ### The contact form
-Netlify has detected the `enquiry` form (name, email, service, message). Submissions appear under
-Site → Forms.
-
-**Still to do:** turn on the email alert, or nobody gets told about an enquiry.
-Site configuration → **Forms → Form notifications → Add notification → Email notification**,
-then enter `hitanshiwatwani2000@gmail.com`.
+Netlify has detected the `enquiry` form (name, email, phone, city, service, message).
+Submissions appear under Site → Forms, and are emailed to palettepalss@gmail.com.
 
 Note: new Netlify sites ship with form detection **off** (`ignore_html_forms: true`). It has been
 turned on for this site. If forms ever stop being detected after a change, check that setting first.
@@ -132,21 +127,20 @@ file locally — that is expected, and the page says so. Once deployed to Netlif
 
 1. Site → **Forms** — you will see a form called **enquiry**
 2. **Form notifications → Add notification → Email notification**
-3. Enter `hitanshiwatwani2000@gmail.com` and save
+3. Enter `palettepalss@gmail.com` and save
 
 Every enquiry then lands in that inbox and in the Netlify dashboard.
 
 ---
 
-## 📁 About the image folders
+## 📁 About the photos
 
-The original photos are still in `images/`, `murals/`, `marriage/` and `workshop/`. **The site
-does not use them** — it only reads `assets/img/`. They were 800 MB across 158 files, but only
-58 of those were actually different photos; the rest were duplicates of each other under
-different names.
+`originals/` holds all 88 source photographs, and they **are** committed to git, so the repository
+is a real backup. They are not deployed; only the converted copies in `assets/img/` go to the web.
 
-Keep the originals as your backup, but **do not upload them when you deploy**. The site itself
-is about 20 MB.
+The old `images/`, `murals/`, `marriage/` and `workshop/` folders are gone. They held 839 MB, but
+422 MB of that was a single aborted browser download and 236 MB was the same photos saved under
+different names. Everything genuinely unique was kept.
 
 The old version of the site is in `_archive/` and can be deleted whenever you like.
 
@@ -155,8 +149,7 @@ The old version of the site is in `_archive/` and can be deleted whenever you li
 ## Known gaps
 
 - **Live wedding**: only 3 photos. Worth shooting more, it is a high-value service.
-- **Workshops**: only 1 photo, so it gets one tile. More would let it have a real section.
-- **Doodle**: only the Shrawan Talks wall.
+- **Workshops**: only 2 photos, so it gets one tile. More would let it have a real section.
 - **Testimonials** on the home page are placeholders. Swap in real ones when you have them.
 
 ---

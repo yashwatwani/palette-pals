@@ -19,3 +19,6 @@ node_modules/
 
 # Stray personal documents; no PDF belongs in this static site
 *.pdf
+
+# Local-only keepsakes: art the client pulled, stray documents
+_local-archive/

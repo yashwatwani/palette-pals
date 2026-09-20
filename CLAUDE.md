@@ -5,7 +5,7 @@ Guidance for Claude Code working in this repo.
 ## What this is
 
 The marketing site for **Palette Pals**, a two-artist studio (Hitanshi Watwani & Ashmeet Bharaj)
-in Delhi doing murals, sculpted relief, live wedding painting, doodle walls and workshops.
+in Gwalior, Madhya Pradesh doing murals, sculpted relief, live wedding painting, doodle walls and workshops.
 Tagline: *Value meets Duo*. Built for the owner's sister; she will edit the text herself, so
 **readability beats cleverness** in every file here.
 
@@ -30,8 +30,9 @@ assets/js/site.js       menu, reveals, gallery, lightbox, form
 assets/img/full/        2000px WebP, used by the lightbox
 assets/img/thumb/       800px WebP, used by every grid and card
 build.sh                copies the site into dist/ (a copy, not a compile)
+originals/              the 88 source photographs, deduplicated and committed
 _archive/               the previous version of the site, reference only
-images|murals|marriage|workshop/   ORIGINAL PHOTOS — gitignored, not deployed
+_local-archive/         gitignored: artwork the client pulled, stray documents
 ```
 
 `work.html` renders its gallery entirely from `data.js`. To change what appears on the Work page,
@@ -39,7 +40,7 @@ edit `data.js`, not the HTML.
 
 ## Rules that matter
 
-**Deploy `dist/`, never the project root.** The root still contains ~800 MB of original photos.
+**Deploy `dist/`, never the project root.** The root contains `originals/` (181 MB of source photographs) which must not be published to the web host.
 
 ```bash
 ./build.sh && netlify deploy --prod --dir=dist
@@ -71,9 +72,15 @@ cwebp -q 78 -resize 800  0 "in.jpg" -o assets/img/thumb/slug.webp
 
 Then add `{"s":"slug","w":800,"h":<thumb height>}` to the right project in `data.js`.
 
-Two traps already hit: some `.jpg` files are actually **iPhone HEIC** (`cwebp` rejects them; run
-`sips -s format png in.jpg --out out.png` first), and the source folders were **73% duplicates**
-(158 files, 58 distinct). Hash before assuming two filenames are two photos.
+Three traps already hit:
+
+- Some `.jpg` files are actually **iPhone HEIC**. `cwebp` rejects them; run
+  `sips -s format png in.jpg --out out.png` first.
+- The original folders were **73% duplicates** (193 files, 88 distinct). Hash before assuming
+  two filenames are two photos. They have since been deduplicated into `originals/`.
+- Many photos are **phone screenshots** with a status bar and black letterboxing baked in.
+  Cropping to the largest continuously-lit band removes both; cropping only pure black leaves
+  the clock and battery icons visible, which shipped to the live site once.
 
 ## Netlify specifics
 
