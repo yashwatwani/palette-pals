@@ -104,7 +104,7 @@ anything invented. Facts established from it:
   intensive at Samsara Academy of Arts, Hyderabad.
 - Business contact: +91 8435469050 / +91 9770998033 (WhatsApp), IG @palette._.pals,
   YouTube "Palette Pals". **They have no working email address.** Do not put one on the site;
-  palettepalss@gmail.com appears in their portfolio PDF but does not exist.
+  An address appears in their portfolio PDF but does not exist. Do not copy it onto the site.
 
 ## State
 

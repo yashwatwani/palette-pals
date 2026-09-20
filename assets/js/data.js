@@ -538,7 +538,7 @@ window.PROJECTS = [
     "place": "Gwalior, Madhya Pradesh",
     "date": "June 2025",
     "cat": [
-      "doodle"
+      "mural"
     ],
     "blurb": "Commissioned by a podcaster and life coach. Every element refers to something he has done, drawn using both traditional and digital techniques.",
     "imgs": [

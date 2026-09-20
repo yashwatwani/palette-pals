@@ -28,7 +28,7 @@ Built as a plain static site (HTML + CSS + a little JavaScript) — no build too
    ```
 2. **Change the text.** Just find the words on the page in the `.html` file and type over them — names, bios, the story, testimonials.
 3. **Update contact details.** In `contact.html` change the email, phone and WhatsApp number. Also update the email in two places:
-   - `data-email="hello@palettepals.com"` on the `<form>` tag
+   - `data-email="..."` on the `<form>` tag
    - the footer links across all four pages
 4. **Instagram** is already linked to `@palette._.pals` everywhere.
 
@@ -38,7 +38,7 @@ The form is wired up to **Netlify Forms** — free, up to 100 submissions/month.
 **Important:** this only works once the site is deployed to Netlify (it won't work opening the file locally). After you deploy:
 1. In Netlify go to your site → **Forms** — you'll see a form called **enquiry**.
 2. Click **Form notifications → Add notification → Email notification**.
-3. Enter **hitanshiwatwani2000@gmail.com** and save.
+3. Enter **WhatsApp +91 84354 69050** and save.
 
 That's it — every enquiry now lands in that inbox and in the dashboard. (No number is collected; just name, email, service and message.)
 

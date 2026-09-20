@@ -52,7 +52,7 @@ if (form) {
         if (status) { status.style.color = 'var(--sage)'; status.textContent = "Thank you! Your enquiry is on its way — we'll be in touch soon 🎨"; }
       })
       .catch(() => {
-        if (status) { status.style.color = 'var(--terracotta)'; status.textContent = "Hmm, that didn't send. Please email us at hitanshiwatwani2000@gmail.com 💌"; }
+        if (status) { status.style.color = 'var(--terracotta)'; status.textContent = "Hmm, that didn't send. Please email us at WhatsApp +91 84354 69050 💌"; }
       })
       .finally(() => {
         if (btn) { btn.disabled = false; btn.textContent = 'Send enquiry →'; }
