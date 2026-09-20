@@ -220,7 +220,7 @@ body.menu .burger i:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 .marq b { color: var(--flame); font-weight: 400; padding-inline: .35em; }
 
 /* ---------- Service cards ---------- */
-.svc { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(14px, 1.7vw, 24px); }
+.svc { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(14px, 1.7vw, 24px); }
 .svc-card {
   position: relative; display: block; overflow: hidden; border-radius: 4px;
   background: var(--ink); color: var(--bone);
@@ -280,6 +280,7 @@ body.menu .burger i:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
 /* ---------- Split ---------- */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 5.5vw, 84px); align-items: center; }
+.split:has(.portrait) { align-items: start; }
 .split.wide-l { grid-template-columns: 1.15fr .85fr; }
 .media { position: relative; overflow: hidden; border-radius: 3px; background: var(--bone-2); }
 .media img { width: 100%; transition: transform 1.2s var(--ease); }
@@ -291,8 +292,12 @@ body.menu .burger i:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 .media-stack .media { height: 100%; }
 .media-stack .media img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Founder portrait with a caption under it */
-.portrait { margin: 0; }
+/* Founder portrait with a caption under it.
+   Capped and given a fixed aspect: an unconstrained full-size image stretches to the
+   grid column and swamps the text beside it. */
+.portrait { margin: 0; width: 100%; max-width: 440px; margin-inline: auto; }
+.portrait .media { aspect-ratio: 4 / 5; }
+.portrait .media img { width: 100%; height: 100%; object-fit: cover; }
 .portrait figcaption {
   margin-top: 14px;
   font-size: .76rem; letter-spacing: .13em; text-transform: uppercase; color: var(--muted);
@@ -458,8 +463,10 @@ body.cur-lg .cur { opacity: 0; }
 @media (hover: none), (pointer: coarse) { .cur, .cur-d { display: none; } }
 
 /* ---------- Mobile ---------- */
+@media (max-width: 1240px) { .svc { grid-template-columns: 1fr 1fr; } }
+
 @media (max-width: 1020px) {
-  .svc { grid-template-columns: 1fr; }
+  .svc { grid-template-columns: 1fr 1fr; }
   .svc-card { aspect-ratio: 3 / 2.1; }
   .grid { columns: 2; }
   .steps { grid-template-columns: 1fr 1fr; }

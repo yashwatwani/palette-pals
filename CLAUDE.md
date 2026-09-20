@@ -87,7 +87,8 @@ Three traps already hit:
 - The contact form relies on Netlify Forms. New Netlify sites ship with form detection **off**
   (`ignore_html_forms: true`); it has been turned on for this site. If forms stop being detected,
   check that setting before debugging the HTML.
-- **Email notification for enquiries is still not set up.** Submissions land in the dashboard only.
+- **Enquiries land in the Netlify dashboard only.** There is no email notification, because the
+  studio has no inbox. Nobody is alerted when a form is submitted. This needs solving.
 - `robots.txt` currently has `Disallow: /` **on purpose**, because `.netlify.app` is a temporary
   address. Do not "fix" this. It gets lifted when a real domain is connected.
 
@@ -101,8 +102,9 @@ anything invented. Facts established from it:
   Delhi throughout and it was wrong.
 - Both founders hold a BFA from the Government Institute of Fine Arts, Gwalior, plus a month-long
   intensive at Samsara Academy of Arts, Hyderabad.
-- Business contact: palettepalss@gmail.com, +91 8435469050 / +91 9770998033, IG @palette._.pals,
-  YouTube "Palette Pals".
+- Business contact: +91 8435469050 / +91 9770998033 (WhatsApp), IG @palette._.pals,
+  YouTube "Palette Pals". **They have no working email address.** Do not put one on the site;
+  palettepalss@gmail.com appears in their portfolio PDF but does not exist.
 
 ## State
 
@@ -112,7 +114,8 @@ form detected (name, email, phone, city, service, message).
 
 Open, roughly in priority order:
 
-1. **Turn on the Netlify email notification** for enquiries — nobody is told about them right now.
+1. **Nobody is alerted to enquiries.** The studio has no email, so form submissions sit in the
+   Netlify dashboard unseen. Options: create an inbox, or wire the form to WhatsApp/Slack.
 2. **Verify the newly-added project photos.** 23 WhatsApp images were sorted into Lord of the
    Sublime, 3D Botanical Mural, The Safari Study, 3D Botanical Flora Relief, Boho Botanical and
    Pop Textured Wall by eye, matched against the PDF descriptions. The groupings are a best guess

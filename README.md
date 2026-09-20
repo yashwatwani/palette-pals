@@ -110,7 +110,10 @@ is a temporary address. When the real domain is connected:
 
 ### The contact form
 Netlify has detected the `enquiry` form (name, email, phone, city, service, message).
-Submissions appear under Site → Forms, and are emailed to palettepalss@gmail.com.
+Submissions appear under Site → Forms.
+
+**⚠️ Nobody is emailed when someone enquires**, because the studio has no email address. You must
+check the Netlify dashboard, or set up an inbox and add a notification.
 
 Note: new Netlify sites ship with form detection **off** (`ignore_html_forms: true`). It has been
 turned on for this site. If forms ever stop being detected after a change, check that setting first.
@@ -127,7 +130,7 @@ file locally — that is expected, and the page says so. Once deployed to Netlif
 
 1. Site → **Forms** — you will see a form called **enquiry**
 2. **Form notifications → Add notification → Email notification**
-3. Enter `palettepalss@gmail.com` and save
+3. Enter a real inbox and save
 
 Every enquiry then lands in that inbox and in the Netlify dashboard.
 

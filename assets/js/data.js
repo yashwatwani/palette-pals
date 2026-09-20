@@ -6,6 +6,113 @@
 */
 window.PROJECTS = [
   {
+    "slug": "doodle-booth",
+    "title": "Doodle Booth",
+    "place": "TCV Bazaar and other events",
+    "date": "May 2026",
+    "cat": [
+      "doodle"
+    ],
+    "blurb": "A live doodle booth we set up at events. Guests sit down, we draw them on the spot, and they walk away with the card. Two artists drawing all day, nobody waits long.",
+    "imgs": [
+      {
+        "s": "doodle-booth-01",
+        "w": 800,
+        "h": 714
+      },
+      {
+        "s": "doodle-booth-02",
+        "w": 800,
+        "h": 1423
+      },
+      {
+        "s": "doodle-booth-03",
+        "w": 800,
+        "h": 1423
+      },
+      {
+        "s": "doodle-booth-04",
+        "w": 800,
+        "h": 1066
+      },
+      {
+        "s": "doodle-booth-05",
+        "w": 800,
+        "h": 747
+      },
+      {
+        "s": "doodle-booth-06",
+        "w": 800,
+        "h": 1066
+      },
+      {
+        "s": "doodle-booth-07",
+        "w": 800,
+        "h": 1065
+      },
+      {
+        "s": "doodle-booth-08",
+        "w": 800,
+        "h": 1066
+      },
+      {
+        "s": "doodle-booth-09",
+        "w": 800,
+        "h": 1067
+      },
+      {
+        "s": "doodle-booth-10",
+        "w": 800,
+        "h": 1001
+      },
+      {
+        "s": "doodle-booth-11",
+        "w": 800,
+        "h": 601
+      },
+      {
+        "s": "doodle-booth-12",
+        "w": 800,
+        "h": 1423
+      },
+      {
+        "s": "doodle-booth-13",
+        "w": 800,
+        "h": 1065
+      },
+      {
+        "s": "doodle-booth-14",
+        "w": 800,
+        "h": 1067
+      },
+      {
+        "s": "doodle-booth-15",
+        "w": 800,
+        "h": 1067
+      },
+      {
+        "s": "doodle-booth-16",
+        "w": 800,
+        "h": 1066
+      },
+      {
+        "s": "doodle-booth-17",
+        "w": 800,
+        "h": 1067
+      },
+      {
+        "s": "doodle-booth-18",
+        "w": 800,
+        "h": 1423
+      },
+      {
+        "s": "doodle-booth-19",
+        "w": 800,
+        "h": 522
+      }
+    ]
+  },
+  {
     "slug": "boho-botanical",
     "title": "Boho Botanical",
     "place": "Gwalior, Madhya Pradesh",
@@ -131,6 +238,73 @@ window.PROJECTS = [
         "s": "safari-study-6",
         "w": 800,
         "h": 1423
+      }
+    ]
+  },
+  {
+    "slug": "clay-workshop",
+    "title": "Clay Painting Workshop",
+    "place": "Gwalior, Madhya Pradesh",
+    "date": "January 2026",
+    "cat": [
+      "workshop"
+    ],
+    "blurb": "A hands-on session where everybody shapes and paints their own clay piece and takes it home. No experience needed, and nobody leaves without having made something.",
+    "imgs": [
+      {
+        "s": "workshop-clay-01",
+        "w": 800,
+        "h": 450
+      },
+      {
+        "s": "workshop-clay-02",
+        "w": 800,
+        "h": 450
+      },
+      {
+        "s": "workshop-clay-03",
+        "w": 800,
+        "h": 1423
+      },
+      {
+        "s": "workshop-clay-04",
+        "w": 800,
+        "h": 1423
+      },
+      {
+        "s": "workshop-clay-05",
+        "w": 800,
+        "h": 1423
+      },
+      {
+        "s": "workshop-clay-06",
+        "w": 800,
+        "h": 450
+      },
+      {
+        "s": "workshop-clay-07",
+        "w": 800,
+        "h": 1423
+      },
+      {
+        "s": "workshop-clay-08",
+        "w": 800,
+        "h": 1423
+      },
+      {
+        "s": "workshop-clay-09",
+        "w": 800,
+        "h": 1067
+      },
+      {
+        "s": "workshop-clay-10",
+        "w": 800,
+        "h": 1097
+      },
+      {
+        "s": "workshop-clay-11",
+        "w": 800,
+        "h": 1173
       }
     ]
   },
@@ -364,7 +538,7 @@ window.PROJECTS = [
     "place": "Gwalior, Madhya Pradesh",
     "date": "June 2025",
     "cat": [
-      "mural"
+      "doodle"
     ],
     "blurb": "Commissioned by a podcaster and life coach. Every element refers to something he has done, drawn using both traditional and digital techniques.",
     "imgs": [
@@ -382,6 +556,16 @@ window.PROJECTS = [
         "s": "shrawan-talks-doodle-mural-3",
         "w": 800,
         "h": 534
+      },
+      {
+        "s": "shrawan-talks-doodle-mural-4",
+        "w": 800,
+        "h": 638
+      },
+      {
+        "s": "shrawan-talks-doodle-mural-5",
+        "w": 800,
+        "h": 640
       }
     ]
   },
@@ -613,7 +797,7 @@ window.PROJECTS = [
       {
         "s": "live-wedding-2-gwalior",
         "w": 800,
-        "h": 1093
+        "h": 586
       }
     ]
   },

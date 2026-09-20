@@ -230,6 +230,7 @@
     { id: 'mural', label: 'Murals' },
     { id: 'relief', label: '3D & Relief' },
     { id: 'wedding', label: 'Live Wedding' },
+    { id: 'doodle', label: 'Doodle' },
     { id: 'workshop', label: 'Workshops' }
   ];
 
@@ -364,7 +365,7 @@
       if (location.protocol === 'file:') {
         e.preventDefault();
         msg.className = 'form-msg on bad';
-        msg.textContent = 'The form only sends once the site is deployed to Netlify. Until then, email hitanshiwatwani2000@gmail.com directly.';
+        msg.textContent = 'The form only sends once the site is deployed. Until then, message us on WhatsApp at +91 84354 69050.';
         return;
       }
       msg.className = 'form-msg on';
