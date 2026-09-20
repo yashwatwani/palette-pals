@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work — Palette Pals</title>
+  <meta name="description" content="A gallery of murals, doodle art, live wedding painting and workshops by Palette Pals." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Filter tabs (page-specific) */
+    .filters { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-bottom:44px; }
+    .filters button {
+      font-family: var(--font-body); font-size:.92rem; font-weight:600;
+      padding:10px 22px; border-radius:999px; cursor:pointer;
+      border:1.5px solid rgba(33,28,23,.18); background:transparent; color:var(--ink);
+      transition:.3s var(--ease);
+    }
+    .filters button:hover { border-color: var(--terracotta); color: var(--terracotta); }
+    .filters button.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+    .tile[hidden] { display:none; }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap nav">
+      <a href="index.html" class="brand" aria-label="Palette Pals home"><img class="logo-full" src="images/logo-full.jpg" alt="Palette Pals - Value meets Duo" /></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="work.html" class="active">Work</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="btn btn-primary" style="padding:10px 20px;">Book us</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="wrap reveal">
+      <span class="eyebrow">The gallery</span>
+      <h1>See What We've Been Creating</h1>
+      <p>A growing collection of murals, doodle art, live wedding painting and workshops. Every piece hand-painted, no two alike.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:20px">
+    <div class="wrap">
+      <div class="filters reveal">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="mural">Murals</button>
+        <button data-filter="doodle">Doodle Booth</button>
+        <button data-filter="wedding">Live Wedding</button>
+        <button data-filter="workshop">Workshops</button>
+      </div>
+
+      <div class="gallery" id="grid">
+        <div class="tile tall reveal" data-cat="mural"><img src="images/faces-of-the-night-1.jpg" alt="Pop-art mural of a woman in a cat mask"><span class="cap">Faces of the Night — Delhi lounge</span></div>
+        <div class="tile wide reveal" data-cat="mural"><img src="images/bombay-deli-1.jpg" alt="Illustrated Bombay cityscape café mural"><span class="cap">Bombay Deli — The Everyday Eatery</span></div>
+        <div class="tile tall reveal" data-cat="mural"><img src="images/buddha-1.png" alt="Vivid pop-art blue Buddha meditating among lotuses"><span class="cap">Buddha Meditating</span></div>
+        <div class="tile reveal" data-cat="mural"><img src="images/golden-flamingos-1.jpg" alt="Gold flamingo line-art mural"><span class="cap">Golden Flamingos</span></div>
+        <div class="tile reveal" data-cat="mural"><img src="images/rajasthan-welcomes-1.jpg" alt="Rajasthani folk puppet mural in blue on red"><span class="cap">Rajasthan Welcomes You</span></div>
+        <div class="tile tall reveal" data-cat="mural"><img src="images/jain-navkar-1.jpg" alt="Jain Navkar Mantra in traditional Lipan art style"><span class="cap">Jain Navkar Mantra — Lipan art</span></div>
+        <div class="tile wide reveal" data-cat="mural"><img src="images/residential-rohini-1.jpg" alt="Folk-motif tile mural in a Rohini home"><span class="cap">Residential mural, Rohini</span></div>
+        <div class="tile reveal" data-cat="mural"><img src="images/dental-1.jpg" alt="Textured 3D feature wall for a dental clinic"><span class="cap">Dental Solutions</span></div>
+        <div class="tile tall reveal" data-cat="mural"><img src="images/faces-of-the-night-2.jpg" alt="Noir pop-art mural with cards and dice"><span class="cap">Faces of the Night — the gambler</span></div>
+        <div class="tile reveal" data-cat="mural"><img src="images/lahs-pop-1.jpg" alt="Sculpted 3D textured feature wall with LED lighting"><span class="cap">3D textured feature wall</span></div>
+        <div class="tile wide reveal" data-cat="mural"><img src="images/robinhood-1.jpg" alt="Community mural painted with the Robin Hood Army"><span class="cap">Community mural — Robin Hood Army</span></div>
+        <div class="tile reveal" data-cat="mural"><img src="images/office-mural-1.jpg" alt="Office wall mural"><span class="cap">Office mural</span></div>
+        <div class="tile reveal" data-cat="mural"><img src="images/fort-raigarh-1.jpg" alt="Mural of the Fort of Raigarh"><span class="cap">Fort of Raigarh</span></div>
+        <div class="tile tall reveal" data-cat="mural"><img src="images/room-tales-bedback.jpg" alt="Bedroom feature-wall mural, A Room of Three Tales"><span class="cap">A Room of Three Tales</span></div>
+        <div class="tile reveal" data-cat="mural"><img src="images/map-raigarh-1.png" alt="Illustrated map of Fort Raigarh"><span class="cap">Map of Fort Raigarh</span></div>
+
+        <!-- Doodle Booth -->
+        <div class="tile wide reveal" data-cat="doodle"><img src="images/shrawan-doodle-1.jpg" alt="Hand-drawn doodle mural for the Shrawan Talks podcast studio"><span class="cap">Shrawan Talks — doodle mural</span></div>
+
+        <!-- Live Wedding & Workshops — swap in photos as you go -->
+        <div class="tile reveal" data-cat="wedding"><div class="placeholder-img">Live wedding painting<br>coming soon</div><span class="cap">Live wedding painting</span></div>
+        <div class="tile reveal" data-cat="workshop"><div class="placeholder-img">Workshops &amp; classes<br>coming soon</div><span class="cap">Workshops &amp; classes</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <span class="splash s1"></span><span class="splash s2"></span>
+        <span class="eyebrow" style="color:var(--ochre)">Like what you see?</span>
+        <h2>Let's paint yours next</h2>
+        <p>Commissions are open. Tell us about your wall, event, doodle booth or workshop idea.</p>
+        <a href="contact.html" class="btn btn-primary">Enquire now →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="brand"><img class="logo-full" src="images/logo-full.jpg" alt="Palette Pals - Value meets Duo" /></div>
+          <p>Hand-painted murals, live wedding painting, doodle booths &amp; workshops. Made with colour and care.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <a href="index.html">Home</a>
+          <a href="work.html">Work</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+        <div>
+          <h4>Say hello</h4>
+          <a href="https://www.instagram.com/palette._.pals/" target="_blank" rel="noopener">Instagram @palette._.pals</a>
+          <a href="mailto:hitanshiwatwani2000@gmail.com">hitanshiwatwani2000@gmail.com</a>
+          <a href="contact.html">Book a project</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Palette Pals. All rights reserved.</span>
+        <span>Made with 🎨 &amp; ♥</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Gallery filtering
+    const btns = document.querySelectorAll('.filters button');
+    const tiles = document.querySelectorAll('#grid .tile');
+    btns.forEach(b => b.addEventListener('click', () => {
+      btns.forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+      const f = b.dataset.filter;
+      tiles.forEach(t => { t.hidden = !(f === 'all' || t.dataset.cat === f); });
+    }));
+  </script>
+</body>
+</html>

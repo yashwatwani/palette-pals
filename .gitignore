@@ -1,41 +1,23 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Build output — regenerate any time with ./build.sh
+dist/
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+# Original photographs (~800 MB of JPEG/PNG/HEIC).
+# Deliberately NOT in git: repos never forget large binaries, and GitHub
+# rejects files over 100 MB. The web-ready versions of every one of these
+# photos ARE committed, in assets/img/. Keep the originals backed up
+# somewhere else (Drive, iCloud, an external disk).
+images/
+murals/
+marriage/
+workshop/
+doodle/
 
-# testing
-/coverage
-
-# next.js
-/.next/
-/out/
-
-# production
-/build
-
-# misc
+# Junk
 .DS_Store
-*.pem
+._*
+*.crdownload
+node_modules/
+.netlify/
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# Stray personal documents; nothing PDF belongs in this static site
+*.pdf

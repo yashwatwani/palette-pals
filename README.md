@@ -1,85 +1,163 @@
-# Palette Pals - Art & Design Studio Website
+# 🎨 Palette Pals — website
 
-A modern, responsive website for Palette Pals, an art and design studio specializing in paintings, murals, portraits, and custom artwork.
+A static site for the Palette Pals duo (Hitanshi Watwani & Ashmeet Bharaj): murals, sculpted
+relief, live wedding painting, doodle walls and workshops.
 
-## Features
+Plain HTML, CSS and JavaScript. **No build step, no framework, no npm install.** You can open
+the files directly, and hosting is free.
 
-- Modern, responsive design
-- Smooth animations and transitions
-- Interactive portfolio gallery
-- Contact form
-- Service showcase
-- About section
-- Mobile-friendly navigation
+---
 
-## Tech Stack
+## Pages
 
-- Next.js 14
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- React Icons
+| File | What it is |
+|------|-----------|
+| `index.html`   | Home — hero, services, horizontal "selected work" reel, about, process, testimonials |
+| `work.html`    | Full gallery, filterable, with a lightbox |
+| `about.html`   | The story and the two artists |
+| `contact.html` | Enquiry form, contact details, FAQs |
+| `assets/js/data.js`  | **The project catalogue.** Titles, descriptions and photo lists live here |
+| `assets/css/site.css`| All styling. Colours and fonts are at the very top |
+| `assets/js/site.js`  | Menu, scroll effects, gallery, lightbox |
 
-## Getting Started
+---
 
-1. Clone the repository:
+## ✏️ Making changes
+
+### Change a project title or description
+Everything on the Work page is generated from `assets/js/data.js`. Find the project and edit it:
+
+```js
+{
+  "slug": "bombay-deli",
+  "title": "Bombay Deli",              // ← shows under the photo
+  "place": "Cafe, The Everyday Eatery",// ← the small grey line
+  "cat": ["mural"],                    // ← which filter tab it appears under
+  "blurb": "The whole city folded…",   // ← text in the lightbox
+  "imgs": [ … ]                        // ← photos, first one is the cover
+}
+```
+
+Filter tabs are `"mural"`, `"relief"`, `"wedding"`, `"doodle"`, `"workshop"`.
+A project can be in more than one, e.g. `"cat": ["mural", "relief"]`.
+
+### Change words on a page
+Open the `.html` file, find the sentence, type over it. That is all.
+
+### Change colours or fonts
+Top of `assets/css/site.css`:
+
+```css
+--flame:  #E2662B;   /* the main orange, from the logo */
+--ember:  #BE3A22;   /* the deeper red */
+--bone:   #F7F3EA;   /* page background */
+--ink:    #17140F;   /* text and dark sections */
+```
+
+### ⚠️ After editing CSS or JS
+The `.html` files link to `site.css?v=1` and `site.js?v=1`. Bump that number
+(`?v=2`, `?v=3`…) in all four HTML files so browsers pick up your change instead of
+showing a cached old copy.
+
+---
+
+## 📷 Adding new photos
+
+Photos must be converted before they go on the site. Originals are 5–15 MB each, which is far
+too slow on a phone. Every image is stored twice: a small one for grids, a bigger one for the
+lightbox.
+
+Drop your new photos in a folder, then from the project root:
+
 ```bash
-git clone <repository-url>
-cd palette-pals
+for f in /path/to/new-photos/*.jpg; do n=$(basename "${f%.*}" | tr 'A-Z ' 'a-z-'); cwebp -q 82 -resize 2000 0 "$f" -o "assets/img/full/$n.webp"; cwebp -q 78 -resize 800 0 "$f" -o "assets/img/thumb/$n.webp"; done
 ```
 
-2. Install dependencies:
+That needs `cwebp` (`brew install webp`). If a photo is secretly an iPhone HEIC file renamed to
+`.jpg`, convert it first with `sips -s format png in.jpg --out out.png`.
+
+Then add the new slug to the right project in `assets/js/data.js`, with the thumbnail's pixel
+size:
+
+```js
+{ "s": "your-new-photo", "w": 800, "h": 1067 }
+```
+
+The `w` and `h` stop the page jumping around while images load, so please fill them in.
+
+---
+
+## 🚀 It is live
+
+**https://palettepals.netlify.app** — Netlify project `palettepals`, free tier.
+
+To publish changes:
+
 ```bash
-npm install
+./build.sh && netlify deploy --prod --dir=dist
 ```
 
-3. Run the development server:
-```bash
-npm run dev
-```
+`build.sh` copies the four pages plus `assets/` into `dist/`. **Always deploy `dist/`, never the
+project root** — the root still holds ~800 MB of original photos that must not be uploaded.
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
+### ⚠️ Before the site goes public on a real domain
+Right now `robots.txt` blocks all search engines, deliberately, because `palettepals.netlify.app`
+is a temporary address. When the real domain is connected:
 
-## Project Structure
+1. Delete the `Disallow: /` line in `robots.txt`
+2. Put the canonical tag back in all four pages: `<link rel="canonical" href="https://YOURDOMAIN/PAGE">`
+3. Recreate `sitemap.xml` with the real domain
+4. `./build.sh && netlify deploy --prod --dir=dist`
 
-```
-palette-pals/
-├── public/
-│   └── images/
-│       └── artwork/
-├── src/
-│   ├── app/
-│   │   ├── about/
-│   │   ├── contact/
-│   │   ├── services/
-│   │   ├── work/
-│   │   ├── layout.tsx
-│   │   └── page.tsx
-│   └── components/
-│       └── Navbar.tsx
-├── package.json
-└── README.md
-```
+### The contact form
+Netlify has detected the `enquiry` form (name, email, service, message). Submissions appear under
+Site → Forms.
 
-## Adding Images
+**Still to do:** turn on the email alert, or nobody gets told about an enquiry.
+Site configuration → **Forms → Form notifications → Add notification → Email notification**,
+then enter `hitanshiwatwani2000@gmail.com`.
 
-1. Place your artwork images in the `public/images/artwork/` directory
-2. Update the `artwork` array in `src/app/work/page.tsx` with your image paths and details
+Note: new Netlify sites ship with form detection **off** (`ignore_html_forms: true`). It has been
+turned on for this site. If forms ever stop being detected after a change, check that setting first.
 
-## Customization
+## 🚀 Other hosting (free)
 
-- Colors and styling can be modified in the Tailwind configuration
-- Content can be updated in the respective page components
-- Images can be replaced in the public directory
+**Netlify Drop** is the quickest: go to [app.netlify.com/drop](https://app.netlify.com/drop) and
+drag this whole folder in. It is live in about ten seconds. GitHub Pages, Cloudflare Pages and
+Vercel all work too. You can point `palettepals.com` at any of them later.
 
-## Contributing
+### The contact form
+The form uses **Netlify Forms** (free, 100 submissions/month). It does nothing when you open the
+file locally — that is expected, and the page says so. Once deployed to Netlify:
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. Site → **Forms** — you will see a form called **enquiry**
+2. **Form notifications → Add notification → Email notification**
+3. Enter `hitanshiwatwani2000@gmail.com` and save
 
-## License
+Every enquiry then lands in that inbox and in the Netlify dashboard.
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+---
+
+## 📁 About the image folders
+
+The original photos are still in `images/`, `murals/`, `marriage/` and `workshop/`. **The site
+does not use them** — it only reads `assets/img/`. They were 800 MB across 158 files, but only
+58 of those were actually different photos; the rest were duplicates of each other under
+different names.
+
+Keep the originals as your backup, but **do not upload them when you deploy**. The site itself
+is about 20 MB.
+
+The old version of the site is in `_archive/` and can be deleted whenever you like.
+
+---
+
+## Known gaps
+
+- **Live wedding**: only 3 photos. Worth shooting more, it is a high-value service.
+- **Workshops**: only 1 photo, so it gets one tile. More would let it have a real section.
+- **Doodle**: only the Shrawan Talks wall.
+- **Testimonials** on the home page are placeholders. Swap in real ones when you have them.
+
+---
+Made with 🎨 & ♥
