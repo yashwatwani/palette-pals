@@ -554,23 +554,6 @@ window.PROJECTS = [
     ]
   },
   {
-    "slug": "faces-of-the-night",
-    "title": "Faces of the Night",
-    "place": "Lounge, Delhi",
-    "date": "",
-    "cat": [
-      "mural"
-    ],
-    "blurb": "A pop-noir canvas for a Delhi lounge. Flat blocks of colour, hard shadow, a little mischief.",
-    "imgs": [
-      {
-        "s": "faces-of-the-night-delhi-lounge-mural-2",
-        "w": 800,
-        "h": 1778
-      }
-    ]
-  },
-  {
     "slug": "office-mural",
     "title": "Office Walls",
     "place": "Workplace",

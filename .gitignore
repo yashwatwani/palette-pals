@@ -18,3 +18,6 @@ doodle/
 *.crdownload
 node_modules/
 .netlify/
+
+# Stray personal documents; nothing PDF belongs in this static site
+*.pdf
