@@ -1,11 +1,9 @@
 # Build output — regenerate any time with ./build.sh
 dist/
 
-# Original photographs (~800 MB of JPEG/PNG/HEIC).
-# Deliberately NOT in git: repos never forget large binaries, and GitHub
-# rejects files over 100 MB. The web-ready versions of every one of these
-# photos ARE committed, in assets/img/. Keep the originals backed up
-# somewhere else (Drive, iCloud, an external disk).
+# The messy source folders: ~840 MB of which 422 MB is an aborted download and
+# 236 MB is the same photos under different names. The deduplicated set of every
+# real original lives in originals/ and IS committed.
 images/
 murals/
 marriage/
@@ -19,5 +17,5 @@ doodle/
 node_modules/
 .netlify/
 
-# Stray personal documents; nothing PDF belongs in this static site
+# Stray personal documents; no PDF belongs in this static site
 *.pdf

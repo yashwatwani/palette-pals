@@ -56,7 +56,7 @@ window.PROJECTS = [
       {
         "s": "botanical-3d-2",
         "w": 800,
-        "h": 1733
+        "h": 1638
       },
       {
         "s": "botanical-3d-3",
@@ -105,7 +105,7 @@ window.PROJECTS = [
       {
         "s": "safari-study-1",
         "w": 800,
-        "h": 1583
+        "h": 1423
       },
       {
         "s": "safari-study-2",
@@ -115,7 +115,7 @@ window.PROJECTS = [
       {
         "s": "safari-study-3",
         "w": 800,
-        "h": 1582
+        "h": 1423
       },
       {
         "s": "safari-study-4",
@@ -174,8 +174,23 @@ window.PROJECTS = [
     "cat": [
       "relief"
     ],
-    "blurb": "A vertical feature wall of hand-sculpted tulips and bird motifs, each one hand-painted afterwards to bring up the colour. Built to give the room height and organic movement.",
+    "blurb": "A vertical feature wall of hand-sculpted lilies and bird motifs, each one hand-painted afterwards to bring up the colour, then lit from behind. Built to give the room height and organic movement. The later photographs show it part-sculpted, before painting.",
     "imgs": [
+      {
+        "s": "flora-relief-finished-1",
+        "w": 800,
+        "h": 1066
+      },
+      {
+        "s": "flora-relief-finished-2",
+        "w": 800,
+        "h": 1066
+      },
+      {
+        "s": "flora-relief-finished-3",
+        "w": 800,
+        "h": 1066
+      },
       {
         "s": "flora-relief-1",
         "w": 800,
@@ -381,6 +396,11 @@ window.PROJECTS = [
     ],
     "blurb": "Three walls in one home, each in a different register: a mural that blends wall painting with bird sculptures, a vibrant rust-orange abstract for the office area, and a semi-abstract floral piece for the TV unit.",
     "imgs": [
+      {
+        "s": "room-three-tales-bedback-hq",
+        "w": 800,
+        "h": 601
+      },
       {
         "s": "a-room-of-three-tales-1-bedback",
         "w": 800,
@@ -628,6 +648,11 @@ window.PROJECTS = [
         "s": "dsc01868",
         "w": 800,
         "h": 451
+      },
+      {
+        "s": "workshop-easel",
+        "w": 800,
+        "h": 629
       }
     ]
   }
