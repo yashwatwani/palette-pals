@@ -230,7 +230,6 @@
     { id: 'mural', label: 'Murals' },
     { id: 'relief', label: '3D & Relief' },
     { id: 'wedding', label: 'Live Wedding' },
-    { id: 'doodle', label: 'Doodle' },
     { id: 'workshop', label: 'Workshops' }
   ];
 
@@ -267,7 +266,7 @@
       b.type = 'button';
       b.className = 'gitem rv';
       b.dataset.cat = p.cat.join(',');
-      b.dataset.i = idx;
+      b.dataset.slug = p.slug;
       b.innerHTML =
         '<figure>' +
           '<img src="assets/img/thumb/' + im.s + '.webp" alt="' + p.title + ' — ' + p.place + '"' +
@@ -327,9 +326,13 @@
       paint();
     }
 
+    // Tiles reference a project by slug, not index, so reordering the catalogue cannot
+    // silently point a tile at the wrong project.
     document.addEventListener('click', function (e) {
-      var t = e.target.closest('[data-i]');
-      if (t && !lb.contains(t)) { open(parseInt(t.dataset.i, 10)); }
+      var t = e.target.closest('[data-slug]');
+      if (!t || lb.contains(t)) return;
+      var i = PROJECTS.findIndex(function (p) { return p.slug === t.dataset.slug; });
+      if (i > -1) open(i);
     });
     $('.lb-x', lb).addEventListener('click', close);
     $('.lb-nav.prev', lb).addEventListener('click', function () { step(-1); });

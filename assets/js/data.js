@@ -1,7 +1,9 @@
-/* Palette Pals — project catalogue.
+/* Palette Pals project catalogue.
    Titles, places, dates and descriptions come from the studio's own
    'Palette Pals Mural Works Portfolio' PDF. Edit here; the pages read from this file.
-   NOTE: must assign to window.PROJECTS (a bare `const` is not a window property). */
+   The assignment below must stay on the global object: a bare `const` declaration is
+   NOT a property of the window, and the page code checks for it there.
+*/
 window.PROJECTS = [
   {
     "slug": "boho-botanical",
@@ -347,7 +349,7 @@ window.PROJECTS = [
     "place": "Gwalior, Madhya Pradesh",
     "date": "June 2025",
     "cat": [
-      "doodle"
+      "mural"
     ],
     "blurb": "Commissioned by a podcaster and life coach. Every element refers to something he has done, drawn using both traditional and digital techniques.",
     "imgs": [
