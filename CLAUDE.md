@@ -85,6 +85,9 @@ Three traps already hit:
 - Many photos are **phone screenshots** with a status bar and black letterboxing baked in.
   Cropping to the largest continuously-lit band removes both; cropping only pure black leaves
   the clock and battery icons visible, which shipped to the live site once.
+- **Always convert through `ImageOps.exif_transpose`.** Some originals carry an EXIF orientation
+  flag (`DSC01868.JPG` is 8, four LAHS files are 6). Reading the pixels without applying it ships
+  the photo rotated ninety degrees, which happened once. Five of the 97 originals are affected.
 
 ## Netlify specifics
 
@@ -137,8 +140,12 @@ Open, roughly in priority order:
 4. **One location conflict:** the photos named `RESIDENTIAL MURAL IN ROHINI,DELHI` are used for
    "Indian Motifs on a Geometric Wall", which the PDF places in Gwalior. The PDF was followed.
    Worth confirming.
-4. **A leftover project literally titled "Workshops"** (2 photos) is redundant now that Clay
-   Painting Workshop and the LAHS workshop exist. Fold its photos in and drop it.
+4. **The project titled just "Workshops" is down to one photo** (`dsc01868`) and needs
+   identifying. Its easel shot moved to the LAHS workshop once the studio spotted that the canvas
+   on it is the same still-life the LAHS students painted. The remaining photo shows a different
+   venue again (arches, hanging plants, patterned runner) and is NOT the Clay Painting Workshop,
+   which has white tables and panelled walls. Ask the studio which session it is, then retitle or
+   fold it in. Do not merge it on a guess.
 5. **"Live Wedding, Gwalior II"** is a placeholder title, pending the couple's name or a date.
 6. **Submit the sitemap to Google Search Console.** Not done.
 7. **Possible 3D upgrade.** The original brief was a "3D website". The agreed plan was to ship this

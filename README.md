@@ -146,8 +146,8 @@ The old version of the site is in `_archive/` and can be deleted whenever you li
 
 - **Testimonials** on the home page are placeholders. Swap in real ones when you have them.
 - **Live wedding**: one photo per wedding. More angles per commission would help.
-- A leftover project titled just **"Workshops"** is redundant now that Clay Painting Workshop and
-  the LAHS workshop exist. Worth folding in and deleting.
+- A project titled just **"Workshops"** has one photo left and nobody knows which session it is.
+  Tell Claude and it can be retitled or merged.
 - **"Live Wedding, Gwalior II"** is a placeholder title, pending the couple's name or a date.
 
 ---

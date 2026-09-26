@@ -324,6 +324,11 @@ window.PROJECTS = [
         "h": 601
       },
       {
+        "s": "workshop-easel",
+        "w": 800,
+        "h": 629
+      },
+      {
         "s": "lahs-workshop-02",
         "w": 800,
         "h": 1066
@@ -896,11 +901,6 @@ window.PROJECTS = [
         "s": "dsc01868",
         "w": 800,
         "h": 1422
-      },
-      {
-        "s": "workshop-easel",
-        "w": 800,
-        "h": 629
       }
     ]
   }
