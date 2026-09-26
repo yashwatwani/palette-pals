@@ -895,7 +895,7 @@ window.PROJECTS = [
       {
         "s": "dsc01868",
         "w": 800,
-        "h": 451
+        "h": 1422
       },
       {
         "s": "workshop-easel",
