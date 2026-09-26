@@ -104,8 +104,9 @@ project root** — the root holds `originals/` (181 MB of source photos) that mu
 Netlify has detected the `enquiry` form (name, email, phone, city, service, message).
 Submissions appear under Site → Forms.
 
-Enquiries are emailed to **hitanshiwatwani52000@gmail.com** and also appear in the dashboard.
-That address is set in Netlify only and is deliberately not written anywhere on the site.
+Enquiries are emailed to the inbox set in **Site configuration → Forms → Form notifications**,
+and also appear in the dashboard. The address lives in Netlify only, deliberately not in this
+repository or on the site, so scrapers cannot harvest it.
 
 Note: new Netlify sites ship with form detection **off** (`ignore_html_forms: true`). It has been
 turned on for this site. If forms ever stop being detected after a change, check that setting first.

@@ -91,8 +91,9 @@ Three traps already hit:
 - The contact form relies on Netlify Forms. New Netlify sites ship with form detection **off**
   (`ignore_html_forms: true`); it has been turned on for this site. If forms stop being detected,
   check that setting before debugging the HTML.
-- Enquiries email **hitanshiwatwani52000@gmail.com** via a Netlify notification hook. That address
-  is configured in Netlify only and **must never appear anywhere in the site or this repo**.
+- Enquiries email an inbox set via a Netlify notification hook (Site configuration → Forms).
+  Read it from the Netlify dashboard. It **must never be written into the site or this repo** —
+  this is a public repository and the address is personal.
 - `robots.txt` now allows crawling; the block was lifted once the real domain resolved.
 - The certificate needed a manual `netlify api provisionSiteTLSCertificate` call. It sat "pending"
   and HTTPS failed while Netlify served its `*.netlify.app` wildcard cert. DNS was fine throughout.
