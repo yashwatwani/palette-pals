@@ -309,6 +309,58 @@ window.PROJECTS = [
     ]
   },
   {
+    "slug": "lahs-art-workshop",
+    "title": "Art Workshop at Little Angels High School",
+    "place": "Little Angels High School, Gwalior",
+    "date": "November 2025",
+    "cat": [
+      "workshop"
+    ],
+    "blurb": "A still-life painting workshop for the students. Everyone worked from the same setup and finished a canvas of their own by the end of the session.",
+    "imgs": [
+      {
+        "s": "lahs-workshop-01",
+        "w": 800,
+        "h": 601
+      },
+      {
+        "s": "lahs-workshop-02",
+        "w": 800,
+        "h": 1066
+      },
+      {
+        "s": "lahs-workshop-03",
+        "w": 800,
+        "h": 601
+      },
+      {
+        "s": "lahs-workshop-04",
+        "w": 800,
+        "h": 1423
+      },
+      {
+        "s": "lahs-workshop-05",
+        "w": 800,
+        "h": 450
+      },
+      {
+        "s": "lahs-workshop-06",
+        "w": 800,
+        "h": 1423
+      },
+      {
+        "s": "lahs-workshop-07",
+        "w": 800,
+        "h": 1423
+      },
+      {
+        "s": "lahs-workshop-08",
+        "w": 800,
+        "h": 1423
+      }
+    ]
+  },
+  {
     "slug": "pop-textured-wall",
     "title": "Pop Textured Wall",
     "place": "Little Angels High School, Gwalior",

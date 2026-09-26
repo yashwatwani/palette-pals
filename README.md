@@ -38,7 +38,7 @@ Everything on the Work page is generated from `assets/js/data.js`. Find the proj
 }
 ```
 
-Filter tabs are `"mural"`, `"relief"`, `"wedding"`, `"workshop"`. Doodle walls count as murals.
+Filter tabs are `"mural"`, `"relief"`, `"wedding"`, `"doodle"`, `"workshop"`.
 A project can be in more than one, e.g. `"cat": ["mural", "relief"]`.
 
 ### Change words on a page
@@ -88,7 +88,8 @@ The `w` and `h` stop the page jumping around while images load, so please fill t
 
 ## 🚀 It is live
 
-**https://palettepals.netlify.app** — Netlify project `palettepals`, free tier.
+**https://palettepalsstudio.com** — Netlify project `palettepals`, free tier.
+The old `palettepals.netlify.app` address redirects here.
 
 To publish changes:
 
@@ -99,21 +100,12 @@ To publish changes:
 `build.sh` copies the four pages plus `assets/` into `dist/`. **Always deploy `dist/`, never the
 project root** — the root holds `originals/` (181 MB of source photos) that must not be uploaded.
 
-### ⚠️ Before the site goes public on a real domain
-Right now `robots.txt` blocks all search engines, deliberately, because `palettepals.netlify.app`
-is a temporary address. When the real domain is connected:
-
-1. Delete the `Disallow: /` line in `robots.txt`
-2. Put the canonical tag back in all four pages: `<link rel="canonical" href="https://YOURDOMAIN/PAGE">`
-3. Recreate `sitemap.xml` with the real domain
-4. `./build.sh && netlify deploy --prod --dir=dist`
-
 ### The contact form
 Netlify has detected the `enquiry` form (name, email, phone, city, service, message).
 Submissions appear under Site → Forms.
 
-**⚠️ Nobody is emailed when someone enquires**, because the studio has no email address. You must
-check the Netlify dashboard, or set up an inbox and add a notification.
+Enquiries are emailed to **hitanshiwatwani52000@gmail.com** and also appear in the dashboard.
+That address is set in Netlify only and is deliberately not written anywhere on the site.
 
 Note: new Netlify sites ship with form detection **off** (`ignore_html_forms: true`). It has been
 turned on for this site. If forms ever stop being detected after a change, check that setting first.
@@ -151,9 +143,11 @@ The old version of the site is in `_archive/` and can be deleted whenever you li
 
 ## Known gaps
 
-- **Live wedding**: only 3 photos. Worth shooting more, it is a high-value service.
-- **Workshops**: only 2 photos, so it gets one tile. More would let it have a real section.
 - **Testimonials** on the home page are placeholders. Swap in real ones when you have them.
+- **Live wedding**: one photo per wedding. More angles per commission would help.
+- A leftover project titled just **"Workshops"** is redundant now that Clay Painting Workshop and
+  the LAHS workshop exist. Worth folding in and deleting.
+- **"Live Wedding, Gwalior II"** is a placeholder title, pending the couple's name or a date.
 
 ---
 Made with 🎨 & ♥

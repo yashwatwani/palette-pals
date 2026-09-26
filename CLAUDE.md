@@ -9,7 +9,11 @@ in Gwalior, Madhya Pradesh doing murals, sculpted relief, live wedding painting,
 Tagline: *Value meets Duo*. Built for the owner's sister; she will edit the text herself, so
 **readability beats cleverness** in every file here.
 
-Live at **https://palettepals.netlify.app** (Netlify project `palettepals`, free tier).
+Live at **https://palettepalsstudio.com** (Netlify project `palettepals`, free tier).
+The domain is registered at Cloudflare Registrar; DNS is two CNAMEs to `palettepals.netlify.app`,
+both set to **DNS only**. Proxying them through Cloudflare (orange cloud) breaks Netlify's
+certificate and causes redirect loops. `palettepals.netlify.app` 301s to the real domain via
+`_redirects`.
 
 ## Stack
 
@@ -87,10 +91,15 @@ Three traps already hit:
 - The contact form relies on Netlify Forms. New Netlify sites ship with form detection **off**
   (`ignore_html_forms: true`); it has been turned on for this site. If forms stop being detected,
   check that setting before debugging the HTML.
-- **Enquiries land in the Netlify dashboard only.** There is no email notification, because the
-  studio has no inbox. Nobody is alerted when a form is submitted. This needs solving.
-- `robots.txt` currently has `Disallow: /` **on purpose**, because `.netlify.app` is a temporary
-  address. Do not "fix" this. It gets lifted when a real domain is connected.
+- Enquiries email **hitanshiwatwani52000@gmail.com** via a Netlify notification hook. That address
+  is configured in Netlify only and **must never appear anywhere in the site or this repo**.
+- `robots.txt` now allows crawling; the block was lifted once the real domain resolved.
+- The certificate needed a manual `netlify api provisionSiteTLSCertificate` call. It sat "pending"
+  and HTTPS failed while Netlify served its `*.netlify.app` wildcard cert. DNS was fine throughout.
+- Netlify's free plan injects a **"Powered by Netlify" badge** (`iframe.nl-badge-frame`) into the
+  page after load. It is not in the HTML, so `curl` and an early DOM query both miss it; wait
+  several seconds and walk the DOM. Removing it properly means moving host (Cloudflare Pages) or
+  paying. Not currently actioned.
 
 ## Source of truth for content
 
@@ -103,20 +112,22 @@ anything invented. Facts established from it:
 - Both founders hold a BFA from the Government Institute of Fine Arts, Gwalior, plus a month-long
   intensive at Samsara Academy of Arts, Hyderabad.
 - Business contact: +91 8435469050 / +91 9770998033 (WhatsApp), IG @palette._.pals,
-  YouTube "Palette Pals". **They have no working email address.** Do not put one on the site;
-  An address appears in their portfolio PDF but does not exist. Do not copy it onto the site.
+  YouTube "Palette Pals". **No email address may appear on the site.** The one in their portfolio
+  PDF does not exist. Enquiry notifications are wired up in Netlify instead.
+- Materials, per the studio: Asian Paints for walls, Winsor & Newton oils for canvas.
+- About-page copy was written by the studio. Keep their wording; it is deliberately warmer than
+  the rest of the site.
 
 ## State
 
-Done: all four pages, 23 projects with real titles/dates/descriptions, filterable gallery,
-lightbox with keyboard and swipe, mobile menu, founders photo on About, asset pipeline, deployed,
-form detected (name, email, phone, city, service, message).
+Done: all four pages, 26 projects with real titles/dates/descriptions, filterable gallery
+(All / Murals / 3D & Relief / Live Wedding / Doodle / Workshops), lightbox with keyboard and
+swipe, mobile menu, founders photo on About, asset pipeline, custom domain with HTTPS, canonicals
+and sitemap, form detected (name, email, phone, city, service, message) with email notification.
 
 Open, roughly in priority order:
 
-1. **Nobody is alerted to enquiries.** The studio has no email, so form submissions sit in the
-   Netlify dashboard unseen. Options: create an inbox, or wire the form to WhatsApp/Slack.
-2. **Verify the newly-added project photos.** 23 WhatsApp images were sorted into Lord of the
+1. **Verify the newly-added project photos.** 23 WhatsApp images were sorted into Lord of the
    Sublime, 3D Botanical Mural, The Safari Study, 3D Botanical Flora Relief, Boho Botanical and
    Pop Textured Wall by eye, matched against the PDF descriptions. The groupings are a best guess
    and the studio should confirm them.
@@ -125,10 +136,10 @@ Open, roughly in priority order:
 4. **One location conflict:** the photos named `RESIDENTIAL MURAL IN ROHINI,DELHI` are used for
    "Indian Motifs on a Geometric Wall", which the PDF places in Gwalior. The PDF was followed.
    Worth confirming.
-5. **Decide the domain**, then lift the robots block, restore the `<link rel="canonical">` tags in
-   all four pages, and recreate `sitemap.xml`.
-6. **Photo gaps.** Live wedding has 3 photos and workshops has 1, despite weddings being the
-   highest-value service. Doodle has one project.
+4. **A leftover project literally titled "Workshops"** (2 photos) is redundant now that Clay
+   Painting Workshop and the LAHS workshop exist. Fold its photos in and drop it.
+5. **"Live Wedding, Gwalior II"** is a placeholder title, pending the couple's name or a date.
+6. **Submit the sitemap to Google Search Console.** Not done.
 7. **Possible 3D upgrade.** The original brief was a "3D website". The agreed plan was to ship this
    fast 2.5D version first, then optionally upgrade the hero and gallery to a scroll-driven 3D room
    where murals are mapped onto real walls (React Three Fiber or vanilla Three.js), with this

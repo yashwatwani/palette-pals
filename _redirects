@@ -1,0 +1,3 @@
+# Send the old Netlify address to the real domain so there is only one indexable site.
+https://palettepals.netlify.app/*  https://palettepalsstudio.com/:splat  301!
+http://palettepals.netlify.app/*   https://palettepalsstudio.com/:splat  301!
