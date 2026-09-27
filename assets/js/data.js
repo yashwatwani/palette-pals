@@ -898,6 +898,11 @@ window.PROJECTS = [
     "blurb": "Two artists, a room of beginners, and a wall that gets finished together.",
     "imgs": [
       {
+        "s": "workshop-group-01",
+        "w": 800,
+        "h": 1392
+      },
+      {
         "s": "dsc01868",
         "w": 800,
         "h": 1422
