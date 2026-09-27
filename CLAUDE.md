@@ -15,6 +15,39 @@ both set to **DNS only**. Proxying them through Cloudflare (orange cloud) breaks
 certificate and causes redirect loops. `palettepals.netlify.app` 301s to the real domain via
 `_redirects`.
 
+## Accounts & access
+
+Three services, three logins. This section exists so a Claude session on a **different** machine
+or logged into **different** accounts can find its footing without asking the user to repeat
+everything. Check each one at the start of any deploy/DNS/domain task — don't assume the
+credentials cached in your shell match what's below, they may belong to a different account now.
+
+**GitHub** — repo is `yashwatwani/palette-pals` (note: not `yashwatwani28`, a different account
+exists and was used briefly early on; the real repo is under `yashwatwani`). Check which account
+`gh` is authenticated as with `gh auth status` — it supports multiple logins, switch with
+`gh auth switch --hostname github.com --user yashwatwani`. If push fails with a permission error,
+that's almost always the cause: check `git remote -v` matches the account `gh auth status` shows
+as active.
+
+**Netlify** — project name `palettepals`, site ID `dee929d1-b085-4349-a425-4d6b5b250135`, account
+slug `yashwatwani28`. CLI: `netlify login` (opens a browser OAuth flow), then `netlify status` to
+confirm. Every `netlify api ...` call in this file's history used `--data '{"site_id":"dee929d1-..."}'`
+directly rather than relying on a linked local folder (`netlify link`), because the CLI's OAuth
+session is what actually matters, not which machine you're on. Dashboard:
+https://app.netlify.com/projects/palettepals
+
+**Cloudflare** (domain registrar + DNS only, not hosting) — account associated with
+`yashwatwani28@gmail.com`. Dashboard: https://dash.cloudflare.com → palettepalsstudio.com → DNS →
+Records. Nothing here needs the CLI; it's all done through the dashboard by the human, Claude
+cannot act on Cloudflare directly (no API token has been issued). If DNS ever needs to change,
+walk the user through the dashboard rather than assuming API access.
+
+**None of the three accounts are the same person's daily-driver account** necessarily — treat them
+as project-specific. If a future session runs under a new machine/user, the fastest way back in is:
+1. `gh auth status` / `gh auth login` for GitHub
+2. `netlify status` / `netlify login` for Netlify — then `netlify api getSite --data '{"site_id":"dee929d1-b085-4349-a425-4d6b5b250135"}'` to confirm you're looking at the right site
+3. Cloudflare is dashboard-only, ask the user to check DNS there if needed
+
 ## Stack
 
 Plain static HTML, CSS and JavaScript. **No framework, no bundler, no `npm install`.** Do not

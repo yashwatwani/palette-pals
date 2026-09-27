@@ -8,6 +8,28 @@ the files directly, and hosting is free.
 
 ---
 
+## 🔑 Accounts (so you or a new helper can pick this up)
+
+This project touches three separate logins. If you ever set up Claude Code on a new computer, or
+someone else takes this over, here is where everything lives:
+
+| Service | What it's for | Where |
+|---|---|---|
+| **GitHub** | Code + photo backup | Account `yashwatwani`, repo `palette-pals` |
+| **Netlify** | Hosting, the contact form | Account slug `yashwatwani28`, project `palettepals` |
+| **Cloudflare** | Domain + DNS only (not hosting) | `yashwatwani28@gmail.com`, dashboard only |
+
+**To reconnect Claude Code (or the `gh`/`netlify` CLIs) to these:**
+
+- GitHub: `gh auth login` — sign in with the browser flow, choose account **yashwatwani**
+- Netlify: `netlify login` — sign in with the browser flow, choose account **yashwatwani28**
+- Cloudflare: no CLI needed. Log into [dash.cloudflare.com](https://dash.cloudflare.com) with
+  `yashwatwani28@gmail.com` to touch DNS. Claude cannot do this part itself — no API key has ever
+  been given to it for Cloudflare, only Netlify and GitHub.
+
+If a helper (human or AI) says "I don't have access", this table is what they need, not a fresh
+explanation of the whole project.
+
 ## Pages
 
 | File | What it is |
